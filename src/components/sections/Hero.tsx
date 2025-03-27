@@ -77,12 +77,14 @@ const Hero = () => {
         </div>
       </div>
       
-      <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(200%); }
-        }
-      `}</style>
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(200%); }
+          }
+        `}
+      </style>
     </section>
   );
 };

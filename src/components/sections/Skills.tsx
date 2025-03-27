@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import SkillCard from '../ui/SkillCard';
-import { Microscope, Computer, Flask, Rat, Dna } from 'lucide-react';
+import { Microscope, Computer, Dna, Rat, Beaker } from 'lucide-react';
 
 const Skills = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,7 +33,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Biochemistry",
-      icon: <Flask className="w-6 h-6" />,
+      icon: <Beaker className="w-6 h-6" />,
       skills: [
         "Protein/DNA/RNA extraction",
         "Gel electrophoresis",
