@@ -19,6 +19,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Poppins', 'sans-serif'],
+				display: ['Montserrat', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -64,22 +68,18 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 research: {
-                    DEFAULT: '#E8F3ED',
-                    dark: '#537362'
+                    DEFAULT: '#EBF5FF',
+                    dark: '#0066CC'
                 },
                 publication: {
-                    DEFAULT: '#F1F0FB',
-                    dark: '#4A4453'
+                    DEFAULT: '#F0F9FF',
+                    dark: '#0056B3'
                 }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
-			},
-			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Montserrat', 'sans-serif']
 			},
 			keyframes: {
 				'accordion-down': {
@@ -117,6 +117,14 @@ export default {
                 'slide-out-right': {
                     '0%': { transform: 'translateX(0)' },
                     '100%': { transform: 'translateX(100%)' }
+                },
+                'float': {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                },
+                'pulse-subtle': {
+                    '0%, 100%': { opacity: '1' },
+                    '50%': { opacity: '0.8' }
                 }
 			},
 			animation: {
@@ -128,7 +136,9 @@ export default {
                 'scale-out': 'scale-out 0.3s ease-out forwards',
                 'slide-in': 'slide-in 0.5s ease-out forwards',
                 'slide-in-right': 'slide-in-right 0.3s ease-out',
-                'slide-out-right': 'slide-out-right 0.3s ease-out'
+                'slide-out-right': 'slide-out-right 0.3s ease-out',
+                'float': 'float 3s ease-in-out infinite',
+                'pulse-subtle': 'pulse-subtle 2s ease-in-out infinite'
 			}
 		}
 	},
