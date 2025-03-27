@@ -105,14 +105,23 @@ const Contact = () => {
       
       <footer className="mt-16 border-t border-gray-200 pt-8">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-600 text-sm">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">
+                PP
+              </div>
+              <div className="text-left">
+                <h3 className="font-medium text-lg">Priyanka Paul</h3>
+                <p className="text-gray-600 text-sm">Biochemistry & Molecular Biology Researcher</p>
+              </div>
+            </div>
+            
+            <div className="text-center md:text-left text-gray-600 text-sm">
               © {new Date().getFullYear()} Priyanka Paul. All rights reserved.
-            </p>
-            <div className="flex space-x-4">
-              <p className="text-gray-600 text-sm">
-                Research Interests: Biochemistry, Molecular Biology, Bioinformatics
-              </p>
+            </div>
+            
+            <div className="text-right text-gray-600 text-sm">
+              <p>Research Interests: Biochemistry, Molecular Biology, Bioinformatics</p>
             </div>
           </div>
         </div>
