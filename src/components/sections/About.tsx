@@ -57,10 +57,10 @@ const About = () => {
                 I'm Priyanka Paul, an M.Sc. graduate in Biochemistry and Molecular Biology from BSMRSTU, Bangladesh (GPA: 3.93/4.00), with a passion for unraveling the therapeutic potential of natural compounds.
               </p>
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                My research bridges <span className="highlight-text">biochemistry</span>, <span className="highlight-text">molecular biology</span>, and <span className="highlight-text">bioinformatics</span> to address critical health challenges, such as hepatotoxicity and diabetes.
+                My research bridges <span className="highlight-text">biochemistry</span>, <span className="highlight-text">molecular biology</span>, and <span className="highlight-text">bioinformatics</span> to address critical health challenges, with particular focus on hepatoprotective mechanisms and diabetes treatment using natural compounds.
               </p>
               <p className="text-lg leading-relaxed text-gray-700">
-                With hands-on experience in advanced lab techniques and computational tools, I aim to contribute to innovative solutions in medical science.
+                With extensive laboratory experience and computational skills, I aim to contribute to innovative solutions in medical science through multidisciplinary approaches combining in vitro, in vivo, and in silico methodologies.
               </p>
             </div>
           </div>
@@ -74,8 +74,8 @@ const About = () => {
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
                   <div>
-                    <p className="font-medium">M.Sc., Biochemistry and Molecular Biology</p>
-                    <p className="text-gray-600">BSMRSTU (2022–2024)</p>
+                    <p className="font-medium">M.Sc. (with Thesis), Biochemistry and Molecular Biology</p>
+                    <p className="text-gray-600">BSMRSTU, Bangladesh (Apr 2022–Oct 2024)</p>
                     <p className="text-gray-600">GPA: 3.93/4.00</p>
                   </div>
                 </li>
@@ -84,24 +84,24 @@ const About = () => {
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
                   <div>
-                    <p className="font-medium">B.Sc., Biochemistry and Molecular Biology</p>
-                    <p className="text-gray-600">BSMRSTU (2017–2022)</p>
-                    <p className="text-gray-600">GPA: 3.80/4.00, WES: 3.88/4.00</p>
+                    <p className="font-medium">B.Sc. (Hons), Biochemistry and Molecular Biology</p>
+                    <p className="text-gray-600">BSMRSTU, Bangladesh (Jan 2017–Feb 2022)</p>
+                    <p className="text-gray-600">GPA: 3.80/4.00, WES Evaluation: 3.88/4.00</p>
                   </div>
                 </li>
               </ul>
             </div>
             
             <div className="glass-card p-6 rounded-lg border border-gray-100">
-              <h3 className="text-xl font-display font-semibold mb-3 text-primary">Awards & Certifications</h3>
+              <h3 className="text-xl font-display font-semibold mb-3 text-primary">Certifications & Awards</h3>
               <ul className="space-y-4">
                 <li className="flex">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
                   <div>
-                    <p className="font-medium">Chairman's Award for Scholastic Excellence</p>
-                    <p className="text-gray-600">2018</p>
+                    <p className="font-medium">Research Article Design, Writing, and Submission</p>
+                    <p className="text-gray-600">Workshop (August 2024)</p>
                   </div>
                 </li>
                 <li className="flex">
@@ -109,8 +109,8 @@ const About = () => {
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
                   <div>
-                    <p className="font-medium">RESEARCH 360: Research Methodology Course</p>
-                    <p className="text-gray-600">2023</p>
+                    <p className="font-medium">RESEARCH 360: Research Methodology</p>
+                    <p className="text-gray-600">BSMRSTU Research Society (Sep-Dec 2023)</p>
                   </div>
                 </li>
                 <li className="flex">
@@ -119,11 +119,81 @@ const About = () => {
                   </div>
                   <div>
                     <p className="font-medium">CRISPR Training</p>
-                    <p className="text-gray-600">2020</p>
+                    <p className="text-gray-600">BMB Dept & Bio Bangla, BSMRSTU (2020)</p>
+                  </div>
+                </li>
+                <li className="flex">
+                  <div className="mr-4 mt-1">
+                    <div className="w-2 h-2 rounded-full bg-primary"></div>
+                  </div>
+                  <div>
+                    <p className="font-medium">Chairman's Award for Scholastic Excellence</p>
+                    <p className="text-gray-600">Dept. of BMB, BSMRSTU (2018)</p>
                   </div>
                 </li>
               </ul>
             </div>
+          </div>
+          
+          <div className="mt-8 glass-card p-6 rounded-lg border border-gray-100">
+            <h3 className="text-xl font-display font-semibold mb-3 text-primary">Language Proficiency</h3>
+            <p className="text-gray-700">
+              <span className="font-medium">Duolingo English Test (DET):</span> Overall Score 105
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-3">
+              <div className="p-3 bg-gray-50 rounded-md">
+                <p className="text-sm text-gray-600">Listening</p>
+                <p className="font-medium">100</p>
+              </div>
+              <div className="p-3 bg-gray-50 rounded-md">
+                <p className="text-sm text-gray-600">Reading</p>
+                <p className="font-medium">110</p>
+              </div>
+              <div className="p-3 bg-gray-50 rounded-md">
+                <p className="text-sm text-gray-600">Writing</p>
+                <p className="font-medium">105</p>
+              </div>
+              <div className="p-3 bg-gray-50 rounded-md">
+                <p className="text-sm text-gray-600">Speaking</p>
+                <p className="font-medium">100</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 glass-card p-6 rounded-lg border border-gray-100">
+            <h3 className="text-xl font-display font-semibold mb-3 text-primary">Extra-curricular Activities</h3>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <li className="flex items-start">
+                <div className="mr-3 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-gray-700">Research advisor, BMB research association, BSMRSTU</p>
+              </li>
+              <li className="flex items-start">
+                <div className="mr-3 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-gray-700">Active member, Badhan blood donation center, BSMRSTU</p>
+              </li>
+              <li className="flex items-start">
+                <div className="mr-3 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-gray-700">Member, Debating Club, BSMRSTU</p>
+              </li>
+              <li className="flex items-start">
+                <div className="mr-3 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-gray-700">Dance instructor, Bangladesh Child Academy, Jessore</p>
+              </li>
+              <li className="flex items-start col-span-1 md:col-span-2">
+                <div className="mr-3 mt-1">
+                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-gray-700">Winter clothes distribution for underprivileged families (2018-present)</p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

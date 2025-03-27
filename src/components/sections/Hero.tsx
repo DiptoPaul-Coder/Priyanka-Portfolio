@@ -54,16 +54,38 @@ const Hero = () => {
         <div className="h-0.5 w-16 bg-primary my-6 opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }}></div>
         
         <h2 className="text-xl md:text-2xl leading-relaxed max-w-3xl font-medium text-gray-700 mb-8 opacity-0 animate-fade-in" style={{ animationDelay: '600ms' }}>
-          <span className="highlight-text">Researcher</span> in Biochemistry & Molecular Biology | Investigating Hepatoprotective Mechanisms & Bioinformatics Solutions
+          <span className="highlight-text">Biochemistry & Molecular Biology Researcher</span> | Investigating Hepatoprotective Mechanisms & Natural Therapeutic Compounds
         </h2>
         
-        <div className="opacity-0 animate-fade-in" style={{ animationDelay: '800ms' }}>
+        <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '800ms' }}>
           <button 
             onClick={scrollToAbout}
-            className="mt-6 px-8 py-4 rounded-md bg-primary text-white font-medium tracking-wide shadow-sm hover:bg-primary/90 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+            className="px-8 py-4 rounded-md bg-primary text-white font-medium tracking-wide shadow-sm hover:bg-primary/90 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
           >
             Discover My Research
           </button>
+          
+          <a 
+            href="#publications" 
+            className="px-8 py-4 rounded-md bg-white text-primary border border-primary font-medium tracking-wide shadow-sm hover:bg-primary/5 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+          >
+            View Publications
+          </a>
+        </div>
+        
+        <div className="mt-12 pt-8 border-t border-gray-200/50 grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-2xl opacity-0 animate-fade-in" style={{ animationDelay: '1000ms' }}>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-primary">3.93</p>
+            <p className="text-gray-600">M.Sc. GPA (4.00 scale)</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-primary">8+</p>
+            <p className="text-gray-600">Research Publications</p>
+          </div>
+          <div className="text-center">
+            <p className="text-3xl font-bold text-primary">4+</p>
+            <p className="text-gray-600">Years Research Experience</p>
+          </div>
         </div>
       </div>
       

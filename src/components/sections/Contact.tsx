@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import ContactForm from '../ui/ContactForm';
-import { Mail, Phone, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Linkedin, ExternalLink, MapPin } from 'lucide-react';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -44,15 +44,21 @@ const Contact = () => {
       link: "tel:+8801707617471"
     },
     {
+      icon: <MapPin className="w-5 h-5" />,
+      label: "Location",
+      value: "Altapole, Keshabpur-7450, Jessore, Bangladesh",
+      link: "https://maps.google.com/?q=Keshabpur,Jessore,Bangladesh"
+    },
+    {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Google Scholar",
-      value: "Profile",
+      value: "View Profile",
       link: "https://scholar.google.com/"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      value: "Profile",
+      value: "Connect with Me",
       link: "https://linkedin.com/"
     }
   ];
@@ -66,7 +72,7 @@ const Contact = () => {
           <div>
             <h3 className="text-2xl font-display font-semibold mb-6">Get in Touch</h3>
             <p className="text-gray-700 mb-8">
-              I'm always open to discussing research collaborations, opportunities, or answering any questions about my work. Feel free to reach out through any of the channels below.
+              I'm always open to discussing research collaborations, academic opportunities, or answering any questions about my work. Feel free to reach out through any of the channels below.
             </p>
             
             <div className="space-y-6">
@@ -99,10 +105,15 @@ const Contact = () => {
       
       <footer className="mt-16 border-t border-gray-200 pt-8">
         <div className="container mx-auto px-6">
-          <div className="text-center">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-600 text-sm">
               © {new Date().getFullYear()} Priyanka Paul. All rights reserved.
             </p>
+            <div className="flex space-x-4">
+              <p className="text-gray-600 text-sm">
+                Research Interests: Biochemistry, Molecular Biology, Bioinformatics
+              </p>
+            </div>
           </div>
         </div>
       </footer>
