@@ -35,21 +35,22 @@ const Skills = () => {
       title: "Biochemistry",
       icon: <Beaker className="w-6 h-6" />,
       skills: [
-        "Protein/DNA/RNA extraction",
-        "Gel electrophoresis",
-        "HPLC",
-        "GC-MS",
-        "LC-MS"
+        "Protein/DNA/RNA extraction & purification",
+        "Gel electrophoresis (SDS-PAGE and agarose)",
+        "High-Performance Liquid Chromatography (HPLC)",
+        "Gas Chromatography-Mass Spectrometry (GC-MS)",
+        "Liquid Chromatography-Mass Spectrometry (LC-MS)"
       ]
     },
     {
-      title: "Molecular Techniques",
+      title: "Molecular & Immunological Techniques",
       icon: <Dna className="w-6 h-6" />,
       skills: [
-        "PCR, RT-PCR",
+        "PCR & RT-PCR",
         "Genome sequencing",
-        "ELISA",
-        "Western blotting",
+        "ELISA & Western blotting",
+        "Immunofluorescence & Immunohistochemistry",
+        "Flow cytometry & ELISPOT assay",
         "Confocal microscopy"
       ]
     },
@@ -57,7 +58,9 @@ const Skills = () => {
       title: "Microbiology",
       icon: <Microscope className="w-6 h-6" />,
       skills: [
-        "Bacterial/fungal culture",
+        "Bacterial & fungal culture and isolation",
+        "Disk diffusion & tube dilution assays",
+        "Macro-dilution assay",
         "MIC/MBC determination"
       ]
     },
@@ -65,19 +68,23 @@ const Skills = () => {
       title: "Animal Models",
       icon: <Rat className="w-6 h-6" />,
       skills: [
-        "Mice/rat handling",
-        "Injections",
-        "Organ collection"
+        "Mice & rat handling",
+        "Standard procedures (injections, oral gavage)",
+        "Disease induction & dose administration",
+        "Blood & organ collection",
+        "Weight monitoring & safety maintenance"
       ]
     },
     {
       title: "Bioinformatics",
       icon: <Computer className="w-6 h-6" />,
       skills: [
-        "Drug/vaccine design",
+        "Computer-aided drug/vaccine design",
         "SNP analysis",
-        "Multi-OMIC data",
-        "R programming"
+        "Onco-informatic data interpretation",
+        "Multi-OMIC data analysis",
+        "R programming (moderate user)",
+        "Molecular docking & dynamics simulation"
       ]
     }
   ];
@@ -85,7 +92,10 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 md:py-28 bg-white">
       <div className="section-container">
-        <h2 className="section-title text-center">Skills & Tools</h2>
+        <h2 className="section-title text-center">Skills & Expertise</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+          Comprehensive laboratory and computational skills developed through extensive research experience in biochemistry, molecular biology, and bioinformatics.
+        </p>
         
         <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 stagger-animation">
           {skillCategories.map((category, index) => (
