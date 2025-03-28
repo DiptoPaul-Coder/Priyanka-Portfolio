@@ -57,7 +57,7 @@ const Research = () => {
   ];
 
   return (
-    <section id="research" className="py-20 md:py-28 bg-research">
+    <section id="research" className="py-20 md:py-28 bg-gradient-to-br from-research via-white to-research/70">
       <div className="section-container">
         <h2 className="section-title text-center">Research Experience</h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
@@ -79,7 +79,7 @@ const Research = () => {
         
         <div className="mt-16 text-center opacity-0 animate-fade-in" style={{ animationDelay: '600ms' }}>
           <h3 className="text-xl font-display font-medium mb-4">Research Presentations</h3>
-          <div className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+          <div className="max-w-2xl mx-auto p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-100">
             <div className="mb-6">
               <h4 className="font-medium mb-2">Thesis Presentation</h4>
               <p className="text-gray-700">"Cinnamomum tamala leaf's role in liver protection from an over-dose of paracetamol-induced hepatotoxicity in Swiss Albino Mice model" (2023)</p>
