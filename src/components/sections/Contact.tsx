@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 import ContactForm from '../ui/ContactForm';
 import { Mail, Phone, Linkedin, ExternalLink } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '../ui/avatar';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -47,13 +48,13 @@ const Contact = () => {
       icon: <ExternalLink className="w-5 h-5" />,
       label: "Google Scholar",
       value: "View Profile",
-      link: "https://scholar.google.com/"
+      link: "https://scholar.google.com/citations?user=yVVsigoAAAAJ&hl=en"
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
       value: "Connect with Me",
-      link: "https://linkedin.com/"
+      link: "https://www.linkedin.com/in/priyanka-paul-41b95b284/"
     }
   ];
 
@@ -101,9 +102,10 @@ const Contact = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold">
-                PP
-              </div>
+              <Avatar className="w-12 h-12">
+                <AvatarImage src="https://i.ibb.co.com/0sVCXL9/download.jpg" alt="Priyanka Paul" />
+                <AvatarFallback>PP</AvatarFallback>
+              </Avatar>
               <div className="text-left">
                 <h3 className="font-medium text-lg">Priyanka Paul</h3>
                 <p className="text-gray-600 text-sm">Biochemistry & Molecular Biology Researcher</p>

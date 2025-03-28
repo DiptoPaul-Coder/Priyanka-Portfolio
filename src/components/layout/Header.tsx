@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,12 +64,16 @@ const Header = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a 
           href="#hero" 
-          className="font-display text-xl font-semibold tracking-tight text-primary transition-opacity hover:opacity-80"
+          className="flex items-center gap-3 font-display text-xl font-semibold tracking-tight text-primary transition-opacity hover:opacity-80"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('hero');
           }}
         >
+          <Avatar className="w-8 h-8">
+            <AvatarImage src="https://i.ibb.co.com/0sVCXL9/download.jpg" alt="Priyanka Paul" />
+            <AvatarFallback>PP</AvatarFallback>
+          </Avatar>
           Priyanka Paul
         </a>
         
