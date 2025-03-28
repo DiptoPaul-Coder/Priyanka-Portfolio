@@ -1,7 +1,7 @@
 
 import { useEffect, useRef } from 'react';
 import ContactForm from '../ui/ContactForm';
-import { Mail, Phone, Linkedin, ExternalLink, MapPin } from 'lucide-react';
+import { Mail, Phone, Linkedin, ExternalLink } from 'lucide-react';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -42,12 +42,6 @@ const Contact = () => {
       label: "Phone",
       value: "+8801707617471",
       link: "tel:+8801707617471"
-    },
-    {
-      icon: <MapPin className="w-5 h-5" />,
-      label: "Location",
-      value: "Altapole, Keshabpur-7450, Jessore, Bangladesh",
-      link: "https://maps.google.com/?q=Keshabpur,Jessore,Bangladesh"
     },
     {
       icon: <ExternalLink className="w-5 h-5" />,
