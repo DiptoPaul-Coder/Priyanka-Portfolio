@@ -1,35 +1,27 @@
-
 import { useEffect, useRef } from 'react';
-
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
-
-  return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+  return <section id="about" className="py-20 md:py-28 bg-white">
       <div className="section-container">
         <h2 className="section-title text-center">About Me</h2>
         
@@ -76,7 +68,7 @@ const About = () => {
                   <div>
                     <p className="font-medium">M.Sc. (with Thesis), Biochemistry and Molecular Biology</p>
                     <p className="text-gray-600">BSMRSTU, Bangladesh (Apr 2022–Oct 2024)</p>
-                    <p className="text-gray-600">GPA: 3.93/4.00</p>
+                    <p className="text-gray-600">GPA: 3.93/4.00, WES Evaluation: 4.00/4.00</p>
                   </div>
                 </li>
                 <li className="flex">
@@ -197,8 +189,6 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
