@@ -64,8 +64,8 @@ const Hero = () => {
         animationDelay: '1000ms'
       }}>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary">3.93</p>
-            <p className="text-gray-600">M.Sc. GPA (4.00 scale)</p>
+            <p className="text-3xl font-bold text-primary">4.00</p>
+            <p className="text-gray-600">M.Sc. WES GPA (4.00 scale)</p>
           </div>
           <div className="text-center">
             <p className="text-3xl font-bold text-primary">12+</p>
