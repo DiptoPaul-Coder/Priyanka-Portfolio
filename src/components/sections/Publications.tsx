@@ -137,7 +137,7 @@ const Publications = () => {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://scholar.google.com/" 
+            href="https://scholar.google.com/citations?user=yVVsigoAAAAJ&hl=en" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 rounded-md bg-white text-primary border border-primary/30 font-medium hover:bg-primary/5 transition-colors"
