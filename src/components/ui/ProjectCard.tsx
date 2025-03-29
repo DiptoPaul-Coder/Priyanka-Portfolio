@@ -25,7 +25,7 @@ const ProjectCard = ({ title, description, role, link, image, delay }: ProjectCa
       onMouseLeave={() => setIsHovered(false)}
     >
       {image && (
-        <div className="relative h-36 sm:h-48 overflow-hidden">
+        <div className="relative h-28 sm:h-36 md:h-48 overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-700"
             style={{
@@ -37,16 +37,16 @@ const ProjectCard = ({ title, description, role, link, image, delay }: ProjectCa
         </div>
       )}
       
-      <div className="p-4 sm:p-6 bg-white">
-        <div className="inline-block px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs font-medium bg-primary/10 text-primary mb-2 sm:mb-4">
+      <div className="p-3 sm:p-4 md:p-6 bg-white">
+        <div className="inline-block px-2 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary mb-2 sm:mb-3 md:mb-4">
           {role}
         </div>
         
-        <h3 className="text-lg sm:text-xl font-display font-semibold mb-2 sm:mb-3 transition-colors duration-300">
+        <h3 className="text-base sm:text-lg md:text-xl font-display font-semibold mb-1.5 sm:mb-2 md:mb-3 transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-4">
+        <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-2 sm:mb-3 md:mb-4 line-clamp-3 md:line-clamp-4">
           {description}
         </p>
         
@@ -55,11 +55,11 @@ const ProjectCard = ({ title, description, role, link, image, delay }: ProjectCa
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-sm sm:text-base text-primary font-medium hover:text-primary/80 transition-colors"
+            className="inline-flex items-center text-xs sm:text-sm md:text-base text-primary font-medium hover:text-primary/80 transition-colors"
           >
             <span>View Project</span>
             <svg
-              className="ml-1 w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-300 transform"
+              className="ml-1 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 transition-transform duration-300 transform"
               style={{
                 transform: isHovered ? 'translateX(4px)' : 'translateX(0)'
               }}
