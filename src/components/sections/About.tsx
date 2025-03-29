@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -12,22 +14,25 @@ const About = () => {
     }, {
       threshold: 0.1
     });
+    
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+    
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
     };
   }, []);
+
   return <section id="about" className="py-20 md:py-28 bg-white">
       <div className="section-container">
-        <h2 className="section-title text-center">About Me</h2>
+        <h2 className="section-title text-center aos" data-aos="fade-up">About Me</h2>
         
         <div ref={sectionRef} className="reveal-animation max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row items-center md:space-x-12 mb-8">
-            <div className="w-full md:w-1/3 flex justify-center">
+            <div className="w-full md:w-1/3 flex justify-center aos" data-aos="fade-right" data-aos-delay="200">
               <div className="relative w-48 h-48 mb-8 md:mb-0">
                 <div className="absolute inset-0 border-2 rounded-full border-primary transform rotate-6"></div>
                 <div className="absolute inset-0 border-2 rounded-full border-accent transform -rotate-6"></div>
@@ -44,7 +49,7 @@ const About = () => {
               </div>
             </div>
             
-            <div className="w-full md:w-2/3">
+            <div className="w-full md:w-2/3 aos" data-aos="fade-left" data-aos-delay="300">
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
                 I'm Priyanka Paul, an M.Sc. graduate in Biochemistry and Molecular Biology from BSMRSTU, Bangladesh (GPA: 3.93/4.00), with a passion for unraveling the therapeutic potential of natural compounds.
               </p>
@@ -58,10 +63,10 @@ const About = () => {
           </div>
           
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="glass-card p-6 rounded-lg border border-gray-100">
+            <div className="glass-card p-6 rounded-lg border border-gray-100 aos" data-aos="fade-up" data-aos-delay="400">
               <h3 className="text-xl font-display font-semibold mb-3 text-primary">Education</h3>
               <ul className="space-y-4">
-                <li className="flex">
+                <li className="flex aos-item" data-aos="fade-right" data-aos-delay="500">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
@@ -71,7 +76,7 @@ const About = () => {
                     <p className="text-gray-600">GPA: 3.93/4.00, WES Evaluation: 4.00/4.00</p>
                   </div>
                 </li>
-                <li className="flex">
+                <li className="flex aos-item" data-aos="fade-right" data-aos-delay="600">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
@@ -84,10 +89,10 @@ const About = () => {
               </ul>
             </div>
             
-            <div className="glass-card p-6 rounded-lg border border-gray-100">
+            <div className="glass-card p-6 rounded-lg border border-gray-100 aos" data-aos="fade-up" data-aos-delay="500">
               <h3 className="text-xl font-display font-semibold mb-3 text-primary">Certifications & Awards</h3>
               <ul className="space-y-4">
-                <li className="flex">
+                <li className="flex aos-item" data-aos="fade-right" data-aos-delay="700">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
@@ -96,7 +101,7 @@ const About = () => {
                     <p className="text-gray-600">Workshop (August 2024)</p>
                   </div>
                 </li>
-                <li className="flex">
+                <li className="flex aos-item" data-aos="fade-right" data-aos-delay="800">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
@@ -105,7 +110,7 @@ const About = () => {
                     <p className="text-gray-600">BSMRSTU Research Society (Sep-Dec 2023)</p>
                   </div>
                 </li>
-                <li className="flex">
+                <li className="flex aos-item" data-aos="fade-right" data-aos-delay="900">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
@@ -114,7 +119,7 @@ const About = () => {
                     <p className="text-gray-600">BMB Dept & Bio Bangla, BSMRSTU (2020)</p>
                   </div>
                 </li>
-                <li className="flex">
+                <li className="flex aos-item" data-aos="fade-right" data-aos-delay="1000">
                   <div className="mr-4 mt-1">
                     <div className="w-2 h-2 rounded-full bg-primary"></div>
                   </div>
@@ -127,7 +132,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="mt-8 glass-card p-6 rounded-lg border border-gray-100">
+          <div className="mt-8 glass-card p-6 rounded-lg border border-gray-100 aos" data-aos="fade-up" data-aos-delay="600">
             <h3 className="text-xl font-display font-semibold mb-3 text-primary">Language Proficiency</h3>
             <p className="text-gray-700">
               <span className="font-medium">Duolingo English Test (DET):</span> Overall Score 105
@@ -152,7 +157,7 @@ const About = () => {
             </div>
           </div>
           
-          <div className="mt-8 glass-card p-6 rounded-lg border border-gray-100">
+          <div className="mt-8 glass-card p-6 rounded-lg border border-gray-100 aos" data-aos="fade-up" data-aos-delay="700">
             <h3 className="text-xl font-display font-semibold mb-3 text-primary">Extra-curricular Activities</h3>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <li className="flex items-start">
@@ -191,4 +196,5 @@ const About = () => {
       </div>
     </section>;
 };
+
 export default About;

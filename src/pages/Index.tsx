@@ -10,28 +10,49 @@ import Contact from '@/components/sections/Contact';
 
 const Index = () => {
   useEffect(() => {
+    // Initialize AOS elements
+    const aosElements = document.querySelectorAll('.aos');
+    
+    // Add intersection observer for all AOS elements
+    const aosObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('aos-animate');
+          } else {
+            // Optional: If we want animations to replay when elements leave view
+            // entry.target.classList.remove('aos-animate');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+    
+    aosElements.forEach(el => aosObserver.observe(el));
+    
     // Add intersection observer for reveal animations
     const revealElements = document.querySelectorAll('.reveal-animation');
     const staggerElements = document.querySelectorAll('.stagger-animation');
     
-    const observer = new IntersectionObserver(
+    const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
+            revealObserver.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 }
     );
     
-    revealElements.forEach((el) => observer.observe(el));
-    staggerElements.forEach((el) => observer.observe(el));
+    revealElements.forEach((el) => revealObserver.observe(el));
+    staggerElements.forEach((el) => revealObserver.observe(el));
     
     return () => {
-      revealElements.forEach((el) => observer.unobserve(el));
-      staggerElements.forEach((el) => observer.unobserve(el));
+      aosElements.forEach(el => aosObserver.unobserve(el));
+      revealElements.forEach((el) => revealObserver.unobserve(el));
+      staggerElements.forEach((el) => revealObserver.unobserve(el));
     };
   }, []);
 
