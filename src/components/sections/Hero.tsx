@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -60,20 +61,20 @@ const Hero = () => {
           </a>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-200/50 grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-2xl opacity-0 animate-fade-in" style={{
+        <div className="mt-12 pt-8 border-t border-gray-200/50 flex flex-row justify-center w-full max-w-2xl opacity-0 animate-fade-in" style={{
         animationDelay: '1000ms'
       }}>
-          <div className="text-center">
-            <p className="text-3xl font-bold text-primary">4.00</p>
-            <p className="text-gray-600">M.Sc. WES GPA (4.00 scale)</p>
+          <div className="text-center px-3 flex-1">
+            <p className="text-2xl sm:text-3xl font-bold text-primary">4.00</p>
+            <p className="text-xs sm:text-sm text-gray-600">M.Sc. WES GPA (4.00 scale)</p>
           </div>
-          <div className="text-center">
-            <p className="text-3xl font-bold text-primary">12+</p>
-            <p className="text-gray-600">Research Publications</p>
+          <div className="text-center px-3 flex-1">
+            <p className="text-2xl sm:text-3xl font-bold text-primary">12+</p>
+            <p className="text-xs sm:text-sm text-gray-600">Research Publications</p>
           </div>
-          <div className="text-center">
-            <p className="text-3xl font-bold text-primary">4+</p>
-            <p className="text-gray-600">Years Research Experience</p>
+          <div className="text-center px-3 flex-1">
+            <p className="text-2xl sm:text-3xl font-bold text-primary">4+</p>
+            <p className="text-xs sm:text-sm text-gray-600">Years Research Experience</p>
           </div>
         </div>
       </div>
