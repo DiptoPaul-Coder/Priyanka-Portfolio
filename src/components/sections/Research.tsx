@@ -1,34 +1,12 @@
 
 import { useEffect, useRef } from 'react';
 import ProjectCard from '../ui/ProjectCard';
+import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
 
 const Research = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const [sectionRef, isVisible] = useAnimateOnScroll<HTMLDivElement>({ threshold: 0.1 });
+  const [presentationsRef, isPresentationsVisible] = useAnimateOnScroll<HTMLDivElement>({ threshold: 0.1, triggerOnce: true });
   
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-    
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const projects = [
     {
       title: "Hepatoprotective Effects of Cinnamomum tamala Leaf Extract",
@@ -57,14 +35,17 @@ const Research = () => {
   ];
 
   return (
-    <section id="research" className="py-20 md:py-28 bg-gradient-to-br from-research via-white to-research/70">
+    <section id="research" className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-research via-white to-research/70">
       <div className="section-container">
-        <h2 className="section-title text-center">Research Experience</h2>
-        <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        <h2 className={`section-title text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          Research Experience
+        </h2>
+        <p className={`text-center text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto ${isVisible ? 'animate-fade-in' : 'opacity-0'}`} 
+           style={{ animationDelay: '200ms' }}>
           My research focuses on exploring the therapeutic potential of natural compounds, particularly in addressing liver diseases and metabolic disorders through comprehensive laboratory and computational approaches.
         </p>
         
-        <div ref={sectionRef} className="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-animation">
+        <div ref={sectionRef} className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 ${isVisible ? 'stagger-animation revealed' : 'stagger-animation'}`}>
           {projects.map((project, index) => (
             <ProjectCard
               key={index}
@@ -77,9 +58,11 @@ const Research = () => {
           ))}
         </div>
         
-        <div className="mt-16 text-center opacity-0 animate-fade-in" style={{ animationDelay: '600ms' }}>
+        <div 
+          ref={presentationsRef} 
+          className={`mt-12 sm:mt-16 text-center transition-all duration-700 transform ${isPresentationsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h3 className="text-xl font-display font-medium mb-4">Research Presentations</h3>
-          <div className="max-w-2xl mx-auto p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-100">
+          <div className="max-w-2xl mx-auto p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
             <div className="mb-6">
               <h4 className="font-medium mb-2">Thesis Presentation</h4>
               <p className="text-gray-700">"Cinnamomum tamala leaf's role in liver protection from an over-dose of paracetamol-induced hepatotoxicity in Swiss Albino Mice model" (2023)</p>

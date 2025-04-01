@@ -2,10 +2,12 @@
 import { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const sections = [
     { id: 'hero', label: 'Home' },
@@ -42,7 +44,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [sections]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -51,6 +53,7 @@ const Header = () => {
         top: element.offsetTop - 80,
         behavior: 'smooth'
       });
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -61,10 +64,10 @@ const Header = () => {
         isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-5"
       )}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
         <a 
           href="#hero" 
-          className="flex items-center gap-3 font-display text-xl font-semibold tracking-tight text-primary transition-opacity hover:opacity-80"
+          className="flex items-center gap-2 sm:gap-3 font-display text-lg sm:text-xl font-semibold tracking-tight text-primary transition-opacity hover:opacity-80"
           onClick={(e) => {
             e.preventDefault();
             scrollToSection('hero');
@@ -78,14 +81,14 @@ const Header = () => {
         </a>
         
         <nav className="hidden md:block">
-          <ul className="flex space-x-8">
+          <ul className="flex space-x-6 lg:space-x-8">
             {sections.map((section) => (
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
                   className={cn(
-                    "nav-link",
-                    activeSection === section.id && "text-primary after:scale-x-100"
+                    "nav-link text-sm lg:text-base",
+                    activeSection === section.id ? "text-primary after:scale-x-100" : "text-gray-700"
                   )}
                   onClick={(e) => {
                     e.preventDefault();
@@ -101,68 +104,87 @@ const Header = () => {
         
         {/* Mobile menu button */}
         <button 
-          className="md:hidden flex flex-col space-y-1.5 w-8 p-1 transition-colors hover:bg-gray-100 rounded"
-          onClick={() => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu) {
-              mobileMenu.classList.toggle('translate-x-full');
-              mobileMenu.classList.toggle('translate-x-0');
-            }
-          }}
+          className="md:hidden p-1.5 rounded-md hover:bg-gray-100 transition-colors"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle menu"
         >
-          <span className="w-full h-0.5 bg-gray-800 rounded-full"></span>
-          <span className="w-full h-0.5 bg-gray-800 rounded-full"></span>
-          <span className="w-full h-0.5 bg-gray-800 rounded-full"></span>
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6 text-gray-800" />
+          ) : (
+            <Menu className="h-6 w-6 text-gray-800" />
+          )}
         </button>
       </div>
       
-      {/* Mobile menu */}
+      {/* Mobile menu - slide in from the right */}
       <div
-        id="mobile-menu"
-        className="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50"
+        className={cn(
+          "fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-50",
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        )}
       >
-        <div className="flex justify-end p-4">
-          <button
-            className="p-2"
-            onClick={() => {
-              const mobileMenu = document.getElementById('mobile-menu');
-              if (mobileMenu) {
-                mobileMenu.classList.toggle('translate-x-full');
-                mobileMenu.classList.toggle('translate-x-0');
-              }
-            }}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+        <div className="flex flex-col h-full">
+          <div className="flex justify-between items-center p-4 border-b">
+            <a 
+              href="#hero"
+              className="flex items-center gap-2 font-display font-semibold"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('hero');
+              }}
+            >
+              <Avatar className="w-8 h-8">
+                <AvatarImage src="https://i.ibb.co.com/0sVCXL9/download.jpg" alt="Priyanka Paul" />
+                <AvatarFallback>PP</AvatarFallback>
+              </Avatar>
+              <span className="text-primary">Priyanka Paul</span>
+            </a>
+            <button
+              className="p-1.5 rounded-md hover:bg-gray-100 transition-colors"
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X className="h-5 w-5 text-gray-800" />
+            </button>
+          </div>
+          
+          <nav className="flex-1 overflow-y-auto py-4">
+            <ul className="space-y-1">
+              {sections.map((section) => (
+                <li key={section.id}>
+                  <a
+                    href={`#${section.id}`}
+                    className={cn(
+                      "block py-2.5 px-4 rounded-md transition-colors",
+                      activeSection === section.id
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-gray-700 hover:bg-gray-100"
+                    )}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(section.id);
+                    }}
+                  >
+                    {section.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          
+          <div className="p-4 border-t text-center text-sm text-gray-500">
+            <p>Biochemistry & Molecular Biology Researcher</p>
+          </div>
         </div>
-        <nav className="px-4 py-2">
-          <ul className="space-y-4">
-            {sections.map((section) => (
-              <li key={section.id}>
-                <a
-                  href={`#${section.id}`}
-                  className={cn(
-                    "block py-2 px-4 rounded-md transition-colors",
-                    activeSection === section.id
-                      ? "bg-primary/10 text-primary font-medium"
-                      : "hover:bg-gray-100"
-                  )}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(section.id);
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    if (mobileMenu) mobileMenu.classList.add('translate-x-full');
-                  }}
-                >
-                  {section.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
       </div>
+      
+      {/* Overlay when mobile menu is open */}
+      {isMobileMenuOpen && (
+        <div 
+          className="fixed inset-0 bg-black/20 z-40 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </header>
   );
 };
