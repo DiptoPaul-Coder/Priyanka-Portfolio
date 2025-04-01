@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -81,25 +82,21 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-medium tracking-tight;
   }
-
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-    @apply overflow-x-hidden;
-  }
 }
 
 @layer components {
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-8 sm:py-12 md:py-16;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24;
   }
   
   .section-title {
-    @apply text-3xl sm:text-4xl md:text-5xl font-display font-semibold mb-4 sm:mb-6 md:mb-8;
+    @apply text-3xl sm:text-4xl md:text-5xl font-display font-semibold mb-6 sm:mb-8 md:mb-12 opacity-0 animate-fade-in;
+    animation-delay: 100ms;
   }
   
   .section-subtitle {
-    @apply text-lg sm:text-xl md:text-2xl font-display font-medium mb-3 sm:mb-4 md:mb-6;
+    @apply text-lg sm:text-xl md:text-2xl font-display font-medium mb-4 sm:mb-6 md:mb-8 opacity-0 animate-fade-in;
+    animation-delay: 200ms;
   }
 
   .highlight-text {
@@ -112,7 +109,7 @@
   }
 
   .nav-link {
-    @apply relative px-2 py-1 text-sm font-medium transition-colors hover:text-primary;
+    @apply relative px-2 py-1 text-sm font-medium text-gray-700 transition-colors hover:text-primary;
   }
   
   .nav-link::after {
@@ -325,8 +322,6 @@ section + section::before {
   .section-container {
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
   }
   
   .section-title {
@@ -339,35 +334,22 @@ section + section::before {
     margin-bottom: 1rem;
   }
   
+  .stagger-animation > * {
+    margin-bottom: 1rem;
+  }
+  
+  .icon-box {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
   section {
     padding: 2rem 0;
   }
-}
-
-/* Enhanced hover effects */
-.hover-lift {
-  @apply transition-all duration-300 ease-out transform hover:-translate-y-1 hover:shadow-lg;
-}
-
-.hover-glow:hover {
-  box-shadow: 0 0 15px rgba(var(--primary), 0.3);
-}
-
-/* Button styles */
-.btn-primary {
-  @apply px-6 py-3 bg-primary text-white font-medium rounded-md shadow-sm hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 transition-colors;
-}
-
-.btn-outline {
-  @apply px-6 py-3 bg-white text-primary border border-primary font-medium rounded-md shadow-sm hover:bg-primary/5 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 transition-colors;
-}
-
-/* Additional responsive utilities */
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+  
+  section::after, 
+  section + section::before {
+    height: 30px;
+  }
 }

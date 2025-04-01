@@ -7,10 +7,8 @@ import Research from '@/components/sections/Research';
 import Publications from '@/components/sections/Publications';
 import Skills from '@/components/sections/Skills';
 import Contact from '@/components/sections/Contact';
-import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
 
 const Index = () => {
-  // Initialize animate on scroll for the entire page
   useEffect(() => {
     // Initialize AOS elements
     const aosElements = document.querySelectorAll('.aos');
@@ -41,17 +39,6 @@ const Index = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('revealed');
-            
-            // For stagger animations, we need to reveal each child with a delay
-            if (entry.target.classList.contains('stagger-animation')) {
-              const children = entry.target.children;
-              Array.from(children).forEach((child, index) => {
-                setTimeout(() => {
-                  child.classList.add('revealed');
-                }, 100 * index); // 100ms delay between each child
-              });
-            }
-            
             revealObserver.unobserve(entry.target);
           }
         });
@@ -70,16 +57,14 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white">
       <Header />
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Research />
-        <Publications />
-        <Skills />
-        <Contact />
-      </main>
+      <Hero />
+      <About />
+      <Research />
+      <Publications />
+      <Skills />
+      <Contact />
     </div>
   );
 };
